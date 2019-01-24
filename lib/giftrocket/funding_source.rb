@@ -7,7 +7,7 @@ module Giftrocket
       attributes = attributes.with_indifferent_access
       self.id = attributes[:id]
       self.method = attributes[:method]
-      self.available_cents = attributes[:meta]['available_cents']
+      self.available_cents = attributes.dig(:meta, :available_cents)
       self.meta = attributes[:meta]
     end
 
